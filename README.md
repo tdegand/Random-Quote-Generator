@@ -1,2 +1,2 @@
 # Random-Quote-Generator
- Displaying random quotes on the PAge and Using basic Javascript
+ Displaying random quotes on the Page and Using basic Javascript
