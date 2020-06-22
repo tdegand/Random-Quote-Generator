@@ -23,7 +23,7 @@ const quotes = [
   {
     quote: 'Deep into that darkness peering, long I stood there, wondering, fearing, doubting, dreaming dreams no mortal ever dared to dream before.',
     source: 'Edgar Allen Poe',
-    citation: 'https://www.poetryfoundation.org/poems/48860/the-raven'
+    citation: 'The Raven'
   }
 ];
 
@@ -46,23 +46,21 @@ const printQuote = () => {
   let quoteString = `<p class="quote"> ${randomQuote.quote} </p>
                        <p class="source"> ${randomQuote.source} </p>`;
 
-
-  for (let i = 0; i < quotes.length; i++) {
-    if (quotes[i] === quotes[i].year) {
-      quoteString = `<p class="quote"> ${randomQuote.quote} </p>
+  if (randomQuote === randomQuote.year) {
+    quoteString = `<p class="quote"> ${randomQuote.quote} </p>
                     <p class="source">${randomQuote.source}
                     <span class="year"> ${randomQuote.year}</span>
                     </p>`
-    }
-    if (quotes[i] === quotes[i].citation) {
-      quoteString = `<p class="quote"> ${randomQuote.quote} </p>
+  }
+  if (randomQuote === randomQuote.citation) {
+    quoteString = `<p class="quote"> ${randomQuote.quote} </p>
                     <p class="source"> ${randomQuote.source}
                         <span class="citation"> ${randomQuote.citation} </span>
                     </p>`
-    }
   }
   document.getElementById('quote-box').innerHTML = quoteString;
 }
+
 
 /***
  * Display the random quote on the page when button is clicked
