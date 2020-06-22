@@ -46,17 +46,20 @@ const printQuote = () => {
   let quoteString = `<p class="quote"> ${randomQuote.quote} </p>
                        <p class="source"> ${randomQuote.source} </p>`;
 
-  if (randomQuote === randomQuote.year) {
-    quoteString = `<p class="quote"> ${randomQuote.quote} </p>
-                   <p class="source">${randomQuote.source}
-                   <span class="year"> ${randomQuote.year}</span>
-                   </p>`
-  }
-  if (randomQuote === randomQuote.citation) {
-    quoteString = `<p class="quote"> ${randomQuote.quote} </p>
-                   <p class="source"> ${randomQuote.source}
-                      <span class="citation"> ${randomQuote.citation} </span>
-                   </p>`
+
+  for (let i = 0; i < quotes.length; i++) {
+    if (quotes[i] === quotes[i].year) {
+      quoteString = `<p class="quote"> ${randomQuote.quote} </p>
+                    <p class="source">${randomQuote.source}
+                    <span class="year"> ${randomQuote.year}</span>
+                    </p>`
+    }
+    if (quotes[i] === quotes[i].citation) {
+      quoteString = `<p class="quote"> ${randomQuote.quote} </p>
+                    <p class="source"> ${randomQuote.source}
+                        <span class="citation"> ${randomQuote.citation} </span>
+                    </p>`
+    }
   }
   document.getElementById('quote-box').innerHTML = quoteString;
 }
