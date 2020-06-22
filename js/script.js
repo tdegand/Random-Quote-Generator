@@ -62,8 +62,24 @@ const printQuote = () => {
 
   }
   document.getElementById('quote-box').innerHTML = quoteString;
+  /***
+ *  Function that Changes the Background color when the quote changes
+ ***/
+  const backgroundColor = () => {
+
+    const red = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+
+    document.body.style.background = `rgb(${red}, ${blue}, ${green})`;
+  }
+  backgroundColor();
+
 }
 
+//setting refresh and loading new quote
+
+setInterval(printQuote, 5000);
 
 /***
  * Display the random quote on the page when button is clicked
