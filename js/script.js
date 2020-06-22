@@ -28,7 +28,7 @@ const quotes = [
 ];
 
 /***
- * Get a Random quote from the above array
+ * Get a Random quote from the above array using index values
  * Return the Random Quote as output
 ***/
 const getRandomQuote = (arr) => {
