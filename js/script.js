@@ -23,7 +23,8 @@ const quotes = [
   {
     quote: 'Deep into that darkness peering, long I stood there, wondering, fearing, doubting, dreaming dreams no mortal ever dared to dream before.',
     source: 'Edgar Allen Poe',
-    citation: 'The Raven'
+    citation: 'The Raven',
+    subject: 'Literature'
   }
 ];
 
@@ -44,19 +45,21 @@ const getRandomQuote = (arr) => {
 const printQuote = () => {
   const randomQuote = getRandomQuote(quotes);
   let quoteString = `<p class="quote"> ${randomQuote.quote} </p>
-                       <p class="source"> ${randomQuote.source} </p>`;
+                       <p class="source"> ${randomQuote.source}`;
 
   if (randomQuote.year) {
-    quoteString = `<p class="quote"> ${randomQuote.quote} </p>
-                    <p class="source">${randomQuote.source}
-                    <span class="year"> ${randomQuote.year}</span>
-                    </p>`
+    const year = `<span class="citation"> ${randomQuote.year} </span>`;
+    quoteString = `${quoteString}  ${year} </p>`;
   }
+
   if (randomQuote.citation) {
-    quoteString = `<p class="quote"> ${randomQuote.quote} </p>
-                    <p class="source"> ${randomQuote.source}
-                        <span class="citation"> ${randomQuote.citation} </span>
-                    </p>`
+    const citation = `<span class="citation"> ${randomQuote.citation} </span>`;
+    quoteString = `${quoteString}  ${citation} </p>`;
+  }
+  if (randomQuote.subject) {
+    const subject = `<span class="subject"> ${randomQuote.subject} </span>`
+    quoteString = `${quoteString} ${subject} </p>`;
+
   }
   document.getElementById('quote-box').innerHTML = quoteString;
 }
