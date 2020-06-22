@@ -13,39 +13,58 @@ project 1 - A Random Quote Generator
 const quotes = [
   {
     quote: 'History repeats itself, first as tragedy, second as farce.',
-    author: '-Karl Marx'
+    source: 'Karl Marx' //can see
   },
   {
     quote: 'Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do.',
-    author: '-Mark Twain'
+    source: 'Mark Twain' // can see
   },
   {
     quote: 'Holding on to anger is like grasping a hot coal with the intent of throwing it at someone else; you are the one who gets burned.',
-    author: 'Buddha',
-    year: '563 BC - 483 BC'
+    source: 'Buddha', //can see
+    year: '563 BC - 483 BC' //cant see year!
   },
   {
     quote: 'It is our choices, that show what we truly are, far more than our abilities.',
-    author: '– J. K Rowling'
+    source: 'J. K Rowling'  //can see
   },
   {
     quote: 'Deep into that darkness peering, long I stood there, wondering, fearing, doubting, dreaming dreams no mortal ever dared to dream before.',
-    author: 'Edgar Allen Poe',
-    citation: 'https://www.poetryfoundation.org/poems/48860/the-raven'
+    source: 'Edgar Allen Poe',
+    citation: 'https://www.poetryfoundation.org/poems/48860/the-raven' // can see
   }
 ];
-
 
 /***
  * `getRandomQuote` function
 ***/
-
-
+const getRandomQuote = (arr) => {
+  let randomSelection = Math.round(Math.random() * arr.length);
+  return arr[randomSelection];
+}
 
 /***
  * `printQuote` function
 ***/
+const printQuote = () => {
+  const randomQuote = getRandomQuote(quotes);
+  let quoteString = `<p class="quote"> ${randomQuote.quote} </p>
+                       <p class="source"> ${randomQuote.source} </p>`;
 
+  if (randomQuote === randomQuote.year) {
+    quoteString = `<p class="quote"> ${randomQuote.quote} </p>
+                   <p class="source">${randomQuote.source}
+                   <span class="year"> ${randomQuote.year}</span>
+                   </p>`
+  }
+  if (randomQuote === randomQuote.citation) {
+    quoteString = `<p class="quote"> ${randomQuote.quote} </p>
+                   <p class="source"> ${randomQuote.source}
+                      <span class="citation"> ${randomQuote.citation} </span>
+                   </p>`
+  }
+  document.getElementById('quote-box').innerHTML = quoteString;
+}
 
 
 /***
