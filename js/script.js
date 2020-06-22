@@ -46,13 +46,13 @@ const printQuote = () => {
   let quoteString = `<p class="quote"> ${randomQuote.quote} </p>
                        <p class="source"> ${randomQuote.source} </p>`;
 
-  if (randomQuote === randomQuote.year) {
+  if (randomQuote.year) {
     quoteString = `<p class="quote"> ${randomQuote.quote} </p>
                     <p class="source">${randomQuote.source}
                     <span class="year"> ${randomQuote.year}</span>
                     </p>`
   }
-  if (randomQuote === randomQuote.citation) {
+  if (randomQuote.citation) {
     quoteString = `<p class="quote"> ${randomQuote.quote} </p>
                     <p class="source"> ${randomQuote.source}
                         <span class="citation"> ${randomQuote.citation} </span>
