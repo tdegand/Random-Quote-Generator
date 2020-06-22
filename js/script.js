@@ -5,25 +5,25 @@
 const quotes = [
   {
     quote: 'History repeats itself, first as tragedy, second as farce.',
-    source: 'Karl Marx' //can see
+    source: 'Karl Marx'
   },
   {
     quote: 'Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do.',
-    source: 'Mark Twain' // can see
+    source: 'Mark Twain'
   },
   {
     quote: 'Holding on to anger is like grasping a hot coal with the intent of throwing it at someone else; you are the one who gets burned.',
-    source: 'Buddha', //can see
-    year: '563 BC - 483 BC' //cant see year!
+    source: 'Buddha',
+    year: '563 BC - 483 BC'
   },
   {
     quote: 'It is our choices, that show what we truly are, far more than our abilities.',
-    source: 'J. K Rowling'  //can see
+    source: 'J. K Rowling'
   },
   {
     quote: 'Deep into that darkness peering, long I stood there, wondering, fearing, doubting, dreaming dreams no mortal ever dared to dream before.',
     source: 'Edgar Allen Poe',
-    citation: 'https://www.poetryfoundation.org/poems/48860/the-raven' // can see
+    citation: 'https://www.poetryfoundation.org/poems/48860/the-raven'
   }
 ];
 
@@ -32,7 +32,7 @@ const quotes = [
  * Return the Random Quote as output
 ***/
 const getRandomQuote = (arr) => {
-  let randomSelection = Math.round(Math.random() * arr.length);
+  let randomSelection = Math.ceil(Math.random() * arr.length) - 1;
   return arr[randomSelection];
 }
 
